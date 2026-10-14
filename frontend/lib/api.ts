@@ -7,8 +7,9 @@ function getApiUrl(): string {
   if (h === "localhost" || h === "127.0.0.1") return "http://localhost:8000"
   return "https://back-ibbis.malvarado.org"
 }
-const API_URL = getApiUrl()
 const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === "true"
+// In demo mode no API host is resolved at all; every call below returns before reaching fetch.
+const API_URL = DEMO_MODE ? "" : getApiUrl()
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -66,7 +67,7 @@ export async function getJobStatus(jobId: string): Promise<ScreeningJob> {
       }
     }
 
-    // Complete — match against example sequences for realistic results
+    // Complete: match against example sequences for realistic results
     const matchedExample = EXAMPLE_SEQUENCES.find((ex) => {
       const exSeq = ex.sequence.split("\n").slice(1).join("").replace(/\s/g, "")
       const inputSeq = mockJob.sequence.replace(/^>.*\n/, "").replace(/\s/g, "")

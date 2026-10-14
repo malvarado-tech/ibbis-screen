@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
+import { DemoBanner } from '@/components/layout/demo-banner';
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ibbis.malvarado.org'),
   title: 'IBBIS Screen | DNA/RNA Biosecurity Screening',
   description: 'Accessible interface for IBBIS\'s open-source DNA/RNA biosecurity screening tools.',
   icons: {
@@ -47,6 +49,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             Skip to main content
           </a>
           <Navbar />
+          <DemoBanner />
           <main id="main-content" className="flex-1">
             {children}
           </main>
