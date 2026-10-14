@@ -1,34 +1,34 @@
-import { Zap, Shield, Lock, CheckCircle } from "lucide-react"
+import { Zap, Shield, Code, CheckCircle } from "lucide-react"
 
 export function Features() {
   const features = [
     {
-      title: "Instant Screening",
-      description: "Upload FASTA files and get comprehensive biorisk results in seconds. No setup and no command line: paste and screen.",
+      title: "Browser Workflow",
+      description: "Paste or upload a FASTA sequence and follow each screening step as it runs, with no command line.",
       icon: Zap,
       color: "text-amber-500",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/20",
     },
     {
-      title: "Open Source",
-      description: "Built on IBBIS's Common Mechanism: fully transparent, auditable, and community-driven.",
+      title: "Runs commec",
+      description: "The back end runs IBBIS's open-source Common Mechanism (commec) in a Docker container.",
       icon: Shield,
       color: "text-primary",
       bgColor: "bg-primary/10",
       borderColor: "border-primary/20",
     },
     {
-      title: "Privacy First",
-      description: "Sequences are processed server-side and never shared with third parties. Your data stays yours.",
-      icon: Lock,
+      title: "REST API",
+      description: "Submit, poll and download JSON or HTML reports through a FastAPI service with OpenAPI docs.",
+      icon: Code,
       color: "text-emerald-500",
       bgColor: "bg-emerald-500/10",
       borderColor: "border-emerald-500/20",
     },
     {
-      title: "Compliance Ready",
-      description: "Aligned with international DNA synthesis screening standards and biosecurity best practices.",
+      title: "Readable Results",
+      description: "A PASS, FLAG or WARNING verdict with a sequence map and the regions behind it.",
       icon: CheckCircle,
       color: "text-blue-500",
       bgColor: "bg-blue-500/10",
@@ -40,9 +40,9 @@ export function Features() {
     <section id="features" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4" style={{ textWrap: "balance" }}>Enterprise-Grade Screening</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4" style={{ textWrap: "balance" }}>What It Does</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to ensure biosecurity compliance without the technical overhead.
+            A web front end for commec, for people who do not work on the command line.
           </p>
         </div>
 

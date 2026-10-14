@@ -27,7 +27,7 @@ export default function AboutPage() {
               As DNA synthesis becomes more accessible, the risk of malicious actors obtaining dangerous pathogens increases. IBBIS Screen aims to mitigate this risk by providing a user-friendly, open-source platform for screening DNA and RNA sequences against known biorisk databases.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-              By making the screening process seamless and transparent, we empower researchers, synthesis providers, and institutions to implement robust biosecurity measures without compromising innovation or efficiency.
+              The interface is meant for synthesis providers and technicians who need to run a screen but do not use the command line or have bioinformatics training.
             </p>
           </div>
         </section>

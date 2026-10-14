@@ -4,17 +4,17 @@ export function HowItWorks() {
   const steps = [
     {
       title: "Upload Sequence",
-      description: "Paste your DNA/RNA sequence directly or drag and drop a FASTA file.",
+      description: "Paste a DNA or RNA sequence, or upload a FASTA file.",
       icon: FileText,
     },
     {
       title: "Automated Screening",
-      description: "Screened against curated biorisk and benign databases in seconds.",
+      description: "commec checks it against biorisk and low-concern databases.",
       icon: Search,
     },
     {
       title: "Get Report",
-      description: "Receive a clear Pass, Flag, or Warning verdict with detailed analysis.",
+      description: "Read a PASS, FLAG or WARNING verdict with the flagged regions.",
       icon: FileCheck,
     },
   ]

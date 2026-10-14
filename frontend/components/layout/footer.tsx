@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 md:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/ibbis-logo-bird.svg" alt="IBBIS" width={28} height={28} />
@@ -31,17 +31,6 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h2 className="font-semibold mb-4">Legal</h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <span className="cursor-default">Privacy Policy</span>
-              </li>
-              <li>
-                <span className="cursor-default">Terms of Service</span>
-              </li>
-            </ul>
-          </div>
         </div>
         
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
@@ -49,9 +38,9 @@ export function Footer() {
             This project is for demonstration purposes only. Created by Miguel Alvarado. All rights reserved. Unauthorized distribution or commercial use is prohibited. For licensing inquiries, contact the author.
           </p>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium px-2 py-1 bg-secondary text-secondary-foreground rounded-full whitespace-nowrap">
-              Open Source
-            </span>
+            <Link href="https://github.com/malvarado-tech/ibbis-screen" target="_blank" rel="noreferrer" className="text-xs font-medium px-2 py-1 bg-secondary text-secondary-foreground rounded-full whitespace-nowrap hover:text-primary transition-colors">
+              Source on GitHub
+            </Link>
           </div>
         </div>
       </div>

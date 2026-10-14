@@ -21,7 +21,7 @@ export function Hero() {
             Making DNA Screening <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Accessible</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            A secure, open-source interface for IBBIS&apos;s biosecurity screening tools. Protect your synthesis pipeline with confidence and compliance.
+            A web interface for commec, IBBIS&apos;s open-source DNA synthesis screening tool. Paste or upload a sequence and read the result without using the command line.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
