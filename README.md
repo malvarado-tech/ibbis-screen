@@ -4,7 +4,7 @@ IBBIS Screen is a web interface for the [Common Mechanism](https://github.com/ib
 
 **Live demo:** [ibbis.malvarado.org](https://ibbis.malvarado.org) (static demo mode: sample data, no DNA is screened)
 
-**Status:** proof of concept, shared with the IBBIS team. Not intended for production screening.
+**Status:** proof of concept, shared with the IBBIS team and released as open source. Not intended for production screening.
 
 ![Landing page](docs/screenshot-landing.png)
 
@@ -160,4 +160,4 @@ Built by [Miguel Alvarado](https://github.com/malvarado-tech) on top of the [IBB
 
 ## License
 
-Copyright (c) 2026 Miguel Alvarado. See [LICENSE](LICENSE) for the terms. The Common Mechanism (`commec`) is distributed by IBBIS under its own license.
+Released under the [MIT License](LICENSE). Copyright (c) 2026 Miguel Angel Alvarado Gonzalez. The Common Mechanism (`commec`) is published by IBBIS under its own MIT License.

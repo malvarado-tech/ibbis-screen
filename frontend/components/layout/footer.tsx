@@ -35,7 +35,8 @@ export function Footer() {
         
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground text-center md:text-left">
-            This project is for demonstration purposes only. Created by Miguel Alvarado. All rights reserved. Unauthorized distribution or commercial use is prohibited. For licensing inquiries, contact the author.
+            This project is for demonstration purposes only. Created by Miguel Alvarado. Released under the{" "}
+            <Link href="https://github.com/malvarado-tech/ibbis-screen/blob/main/LICENSE" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">MIT License</Link>.
           </p>
           <div className="flex items-center gap-2">
             <Link href="https://github.com/malvarado-tech/ibbis-screen" target="_blank" rel="noreferrer" className="text-xs font-medium px-2 py-1 bg-secondary text-secondary-foreground rounded-full whitespace-nowrap hover:text-primary transition-colors">
