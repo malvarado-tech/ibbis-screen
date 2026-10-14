@@ -47,14 +47,14 @@ export function Credibility() {
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-2xl font-bold tabular-nums mb-1">{stat.value}</div>
-                <div className="text-xs text-primary-foreground/50 leading-tight">{stat.label}</div>
+                <div className="text-xs text-primary-foreground/80 leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
 
           {/* Partner logos strip */}
           <div className="border-t border-primary-foreground/10 pt-10">
-            <p className="text-xs text-primary-foreground/40 text-center mb-6 uppercase tracking-widest">Trusted by partners including</p>
+            <p className="text-xs text-primary-foreground/75 text-center mb-6 uppercase tracking-widest">Trusted by partners including</p>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
               {partners.map((partner, i) => (
                 <div key={i} className="group relative">

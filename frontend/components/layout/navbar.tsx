@@ -29,7 +29,7 @@ export function Navbar() {
             <Image src="/ibbis-logo-bird.svg" alt="IBBIS" width={28} height={28} />
             <span className="inline-block font-bold">IBBIS Screen</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+          <nav aria-label="Main" className="hidden md:flex gap-6">
             {routes.map((route) => (
               <Link
                 key={route.href}
@@ -73,7 +73,7 @@ export function Navbar() {
               <span className="sr-only">Toggle menu</span>
             </SheetTrigger>
             <SheetContent side="right">
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav aria-label="Mobile" className="flex flex-col gap-4 mt-8">
                 {routes.map((route) => (
                   <Link
                     key={route.href}

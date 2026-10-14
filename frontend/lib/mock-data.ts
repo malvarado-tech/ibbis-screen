@@ -43,7 +43,7 @@ export const MOCK_GFP_RESULT: ScreeningResult = {
     { id: "4", name: "Low-Concern Check", description: "Clearing against benign databases", status: "complete", duration: 0.8 },
   ],
   regions: [
-    { start: 1, end: 720, type: "benign", label: "GFP — Aequorea victoria fluorescent protein (common lab marker)" },
+    { start: 1, end: 720, type: "benign", label: "GFP: Aequorea victoria fluorescent protein (common lab marker)" },
   ],
 }
 
@@ -56,7 +56,7 @@ export const MOCK_INSULIN_RESULT: ScreeningResult = {
     { id: "4", name: "Low-Concern Check", description: "Clearing against benign databases", status: "complete", duration: 0.6 },
   ],
   regions: [
-    { start: 1, end: 333, type: "benign", label: "Insulin — Homo sapiens preproinsulin (therapeutic, low-concern)" },
+    { start: 1, end: 333, type: "benign", label: "Insulin: Homo sapiens preproinsulin (therapeutic, low-concern)" },
   ],
 }
 
@@ -69,8 +69,8 @@ export const MOCK_FLAGGED_RESULT: ScreeningResult = {
     { id: "4", name: "Low-Concern Check", description: "Clearing against benign databases", status: "complete", duration: 1.1 },
   ],
   regions: [
-    { start: 1, end: 720, type: "benign", label: "GFP variant — fluorescent protein (benign)" },
-    { start: 721, end: 891, type: "biorisk", label: "Flagged region — matches biorisk HMM profile (toxin-like domain)", score: 0.94 },
+    { start: 1, end: 720, type: "benign", label: "GFP variant: fluorescent protein (benign)" },
+    { start: 721, end: 891, type: "biorisk", label: "Flagged region: matches biorisk HMM profile (toxin-like domain)", score: 0.94 },
     { start: 892, end: 960, type: "unknown", label: "Uncharacterized region" },
   ],
 }
@@ -118,7 +118,7 @@ export const MOCK_HISTORY: HistoryItem[] = [
   {
     id: "job_syn003",
     timestamp: "2026-03-21T09:45:00Z",
-    name: "Synthetic Construct X — Flagged",
+    name: "Synthetic Construct X (Flagged)",
     sequence: EXAMPLE_FLAGGED_SEQUENCE.split("\n").slice(1).join(""),
     length: 960,
     status: "FLAG",

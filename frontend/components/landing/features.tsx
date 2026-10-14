@@ -4,7 +4,7 @@ export function Features() {
   const features = [
     {
       title: "Instant Screening",
-      description: "Upload FASTA files and get comprehensive biorisk results in seconds. No setup, no CLI — just paste and screen.",
+      description: "Upload FASTA files and get comprehensive biorisk results in seconds. No setup and no command line: paste and screen.",
       icon: Zap,
       color: "text-amber-500",
       bgColor: "bg-amber-500/10",
@@ -12,7 +12,7 @@ export function Features() {
     },
     {
       title: "Open Source",
-      description: "Built on IBBIS's Common Mechanism — fully transparent, auditable, and community-driven.",
+      description: "Built on IBBIS's Common Mechanism: fully transparent, auditable, and community-driven.",
       icon: Shield,
       color: "text-primary",
       bgColor: "bg-primary/10",

@@ -25,7 +25,7 @@ function StepIndicator({ step, isActive }: { step: ScreeningStep; isActive: bool
         {isSkipped && (
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger aria-label="Why was this step skipped?">
                 <div className="h-4 w-4 rounded-full border-2 border-muted-foreground/30" />
               </TooltipTrigger>
               <TooltipContent>
@@ -63,8 +63,8 @@ function ResultBadge({ result }: { result: string }) {
       <div className="flex justify-center mb-2">
         <Icon className="h-10 w-10" aria-hidden="true" />
       </div>
-      <h3 className="text-2xl font-bold">{result}</h3>
-      <p className="text-sm mt-1 opacity-80">{config.label}</p>
+      <h2 className="text-2xl font-bold">{result}</h2>
+      <p className="text-sm mt-1">{config.label}</p>
     </div>
   )
 }
@@ -74,7 +74,7 @@ function SequenceVisualization({ regions, sequenceLength }: { regions: { start: 
 
   return (
     <div>
-      <h4 className="font-medium mb-3">Sequence Map</h4>
+      <h3 className="font-medium mb-3">Sequence Map</h3>
       <div className="relative h-10 bg-muted rounded-lg overflow-hidden border">
         {regions.map((region, i) => {
           const left = (region.start / sequenceLength) * 100
@@ -86,6 +86,7 @@ function SequenceVisualization({ regions, sequenceLength }: { regions: { start: 
             <TooltipProvider key={i}>
               <Tooltip>
                 <TooltipTrigger
+                  aria-label={`${region.label}, ${region.start} to ${region.end} bp`}
                   className={`absolute top-0 h-full ${color} ${hoverColor} cursor-pointer transition-colors`}
                   style={{ left: `${left}%`, width: `${Math.max(width, 2)}%` }}
                 />
@@ -214,7 +215,7 @@ export default function ScreenPage() {
         <div className="mb-6 flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950/50 p-4 text-sm text-blue-800 dark:text-blue-200">
           <Info className="h-4 w-4 mt-0.5 shrink-0" aria-hidden="true" />
           <div>
-            <span className="font-medium">Demo Mode</span> — Showing simulated screening results using example data.
+            <span className="font-medium">Demo mode:</span> results are simulated from the example data.
             This platform supports real <a href="https://github.com/ibbis-bio/common-mechanism" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600 dark:hover:text-blue-300">commec</a> screening when installed locally with full databases.
           </div>
         </div>
@@ -309,7 +310,7 @@ export default function ScreenPage() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
-                      Screening\u2026
+                      Screening…
                     </>
                   ) : (
                     <>
@@ -342,7 +343,7 @@ export default function ScreenPage() {
                   <div className="flex flex-col items-center justify-center text-center space-y-3">
                     <Loader2 className="h-10 w-10 animate-spin text-primary" aria-hidden="true" />
                     <div aria-live="polite">
-                      <p className="font-medium">Screening in progress\u2026</p>
+                      <p className="font-medium">Screening in progress…</p>
                       <p className="text-sm text-muted-foreground">Running lightweight mode (Steps 1 & 4)</p>
                     </div>
                   </div>
@@ -373,7 +374,7 @@ export default function ScreenPage() {
 
                   {job.result.regions.length > 0 && (
                     <div>
-                      <h4 className="font-medium mb-3">Detected Regions</h4>
+                      <h3 className="font-medium mb-3">Detected Regions</h3>
                       <ul className="space-y-2">
                         {job.result.regions.map((region, i) => (
                           <li key={i} className="text-sm p-3 rounded border bg-muted/50">
@@ -384,8 +385,8 @@ export default function ScreenPage() {
                             <span className={`text-xs px-2 py-0.5 rounded-full ${
                               region.type === "biorisk" ? "bg-red-500/20 text-red-700 dark:text-red-400" :
                               region.type === "regulated" ? "bg-yellow-500/20 text-yellow-700 dark:text-yellow-400" :
-                              region.type === "benign" ? "bg-green-500/20 text-green-700 dark:text-green-400" :
-                              "bg-muted text-muted-foreground"
+                              region.type === "benign" ? "bg-green-500/20 text-green-800 dark:text-green-400" :
+                              "bg-muted text-foreground"
                             }`}>
                               {region.type}
                               {region.score ? ` (${(region.score * 100).toFixed(0)}%)` : ""}

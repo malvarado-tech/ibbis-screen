@@ -17,7 +17,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <h2 className="font-semibold mb-4">Resources</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/about" className="hover:text-primary transition-colors">Documentation</Link>
@@ -32,13 +32,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
+            <h2 className="font-semibold mb-4">Legal</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <span className="text-muted-foreground/60 cursor-default">Privacy Policy</span>
+                <span className="cursor-default">Privacy Policy</span>
               </li>
               <li>
-                <span className="text-muted-foreground/60 cursor-default">Terms of Service</span>
+                <span className="cursor-default">Terms of Service</span>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ export function Footer() {
             This project is for demonstration purposes only. Created by Miguel Alvarado. All rights reserved. Unauthorized distribution or commercial use is prohibited. For licensing inquiries, contact the author.
           </p>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium px-2 py-1 bg-secondary text-secondary-foreground rounded-full">
+            <span className="text-xs font-medium px-2 py-1 bg-secondary text-secondary-foreground rounded-full whitespace-nowrap">
               Open Source
             </span>
           </div>

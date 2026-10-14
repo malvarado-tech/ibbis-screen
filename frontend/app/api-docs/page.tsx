@@ -35,7 +35,7 @@ export default function ApiDocsPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-1 space-y-2">
-          <nav className="sticky top-24 space-y-1">
+          <nav aria-label="On this page" className="sticky top-24 space-y-1">
             <a href="#getting-started" className="block px-3 py-2 text-sm font-medium rounded-md bg-muted text-foreground">Getting Started</a>
             <a href="#endpoints" className="block px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:bg-muted/50 hover:text-foreground">Endpoints</a>
             <div className="pl-4 space-y-1 mt-1">
@@ -47,7 +47,7 @@ export default function ApiDocsPage() {
           </nav>
         </div>
 
-        <div className="lg:col-span-3 space-y-16">
+        <div className="lg:col-span-3 space-y-16 min-w-0">
           <section id="getting-started">
             <h2 className="text-3xl font-bold tracking-tight mb-6">Getting Started</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -76,7 +76,7 @@ export default function ApiDocsPage() {
             <div id="submit-screen" className="space-y-6 mb-12">
               <div className="flex items-center gap-4">
                 <span className="px-3 py-1 rounded-md bg-green-500/10 text-green-700 dark:text-green-400 font-mono font-bold text-sm">POST</span>
-                <h3 className="text-2xl font-semibold">/api/v1/screen</h3>
+                <h3 className="text-2xl font-semibold break-all">/api/v1/screen</h3>
               </div>
               <p className="text-muted-foreground">Submit a new sequence for screening. Returns a job ID for polling.</p>
 
@@ -86,7 +86,7 @@ export default function ApiDocsPage() {
                   <TabsTrigger value="python">Python</TabsTrigger>
                   <TabsTrigger value="js">Node.js</TabsTrigger>
                 </TabsList>
-                <TabsContent value="curl" className="mt-4">
+                <TabsContent value="curl" className="mt-4 min-w-0">
                   <div className="relative">
                     <CopyButton text={`curl -X POST https://your-deployment.run.app/api/v1/screen \\
   -H "Content-Type: application/json" \\
@@ -94,7 +94,7 @@ export default function ApiDocsPage() {
     "sequence": ">GFP\\nATGGTGAGCAAGGGCGAGGAG...",
     "name": "GFP Construct"
   }'`} />
-                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto" tabIndex={0}>
                       <pre><code>{`curl -X POST https://your-deployment.run.app/api/v1/screen \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -104,7 +104,7 @@ export default function ApiDocsPage() {
                     </div>
                   </div>
                 </TabsContent>
-                <TabsContent value="python" className="mt-4">
+                <TabsContent value="python" className="mt-4 min-w-0">
                   <div className="relative">
                     <CopyButton text={`import requests
 
@@ -117,7 +117,7 @@ data = {
 response = requests.post(url, json=data)
 job = response.json()
 print(f"Job ID: {job['job_id']}")  # Poll this ID for results`} />
-                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto" tabIndex={0}>
                       <pre><code>{`import requests
 
 url = "https://your-deployment.run.app/api/v1/screen"
@@ -132,7 +132,7 @@ print(f"Job ID: {job['job_id']}")  # Poll this ID for results`}</code></pre>
                     </div>
                   </div>
                 </TabsContent>
-                <TabsContent value="js" className="mt-4">
+                <TabsContent value="js" className="mt-4 min-w-0">
                   <div className="relative">
                     <CopyButton text={`const response = await fetch(
   'https://your-deployment.run.app/api/v1/screen',
@@ -148,7 +148,7 @@ print(f"Job ID: {job['job_id']}")  # Poll this ID for results`}</code></pre>
 
 const { job_id } = await response.json();
 // Poll GET /api/v1/screen/{job_id} for results`} />
-                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                    <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto" tabIndex={0}>
                       <pre><code>{`const response = await fetch(
   'https://your-deployment.run.app/api/v1/screen',
   {
@@ -176,7 +176,7 @@ const { job_id } = await response.json();
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm overflow-x-auto border">
+                  <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm overflow-x-auto border" tabIndex={0}>
                     <pre><code>{`{
   "job_id": "job_m1x2y3z4",
   "status": "queued"
@@ -190,9 +190,9 @@ const { job_id } = await response.json();
             <div id="get-status" className="space-y-6 mb-12">
               <div className="flex items-center gap-4">
                 <span className="px-3 py-1 rounded-md bg-blue-500/10 text-blue-700 dark:text-blue-400 font-mono font-bold text-sm">GET</span>
-                <h3 className="text-2xl font-semibold">/api/v1/screen/&#123;job_id&#125;</h3>
+                <h3 className="text-2xl font-semibold break-all">/api/v1/screen/&#123;job_id&#125;</h3>
               </div>
-              <p className="text-muted-foreground">Poll for the status and results of a screening job. Poll every 2 seconds until <code className="bg-muted px-1 py-0.5 rounded text-xs">status</code> is <code className="bg-muted px-1 py-0.5 rounded text-xs">complete</code> or <code className="bg-muted px-1 py-0.5 rounded text-xs">error</code>.</p>
+              <p className="text-muted-foreground">Poll for the status and results of a screening job. Poll every 2 seconds until <code className="bg-muted text-foreground px-1 py-0.5 rounded text-xs">status</code> is <code className="bg-muted text-foreground px-1 py-0.5 rounded text-xs">complete</code> or <code className="bg-muted text-foreground px-1 py-0.5 rounded text-xs">error</code>.</p>
 
               <Card>
                 <CardHeader>
@@ -202,7 +202,7 @@ const { job_id } = await response.json();
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm overflow-x-auto border">
+                  <div className="bg-muted/50 p-4 rounded-lg font-mono text-sm overflow-x-auto border" tabIndex={0}>
                     <pre><code>{`{
   "job_id": "job_m1x2y3z4",
   "status": "complete",
@@ -219,7 +219,7 @@ const { job_id } = await response.json();
         "start": 721,
         "end": 891,
         "type": "biorisk",
-        "label": "Flagged region — matches biorisk HMM profile",
+        "label": "Flagged region: matches biorisk HMM profile",
         "score": 0.94
       }
     ]
@@ -234,7 +234,7 @@ const { job_id } = await response.json();
             <div id="download-report" className="space-y-6">
               <div className="flex items-center gap-4">
                 <span className="px-3 py-1 rounded-md bg-blue-500/10 text-blue-700 dark:text-blue-400 font-mono font-bold text-sm">GET</span>
-                <h3 className="text-2xl font-semibold">/api/v1/screen/&#123;job_id&#125;/report</h3>
+                <h3 className="text-2xl font-semibold break-all">/api/v1/screen/&#123;job_id&#125;/report</h3>
               </div>
               <p className="text-muted-foreground">Download the full screening report in JSON or HTML format.</p>
 
@@ -244,7 +244,7 @@ curl https://your-deployment.run.app/api/v1/screen/job_m1x2y3z4/report?format=js
 
 # HTML report (visual, Plotly-based)
 curl https://your-deployment.run.app/api/v1/screen/job_m1x2y3z4/report?format=html`} />
-                <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                <div className="bg-zinc-950 text-zinc-50 p-4 rounded-lg font-mono text-sm overflow-x-auto" tabIndex={0}>
                   <pre><code>{`# JSON report
 curl https://your-deployment.run.app/api/v1/screen/job_m1x2y3z4/report?format=json
 

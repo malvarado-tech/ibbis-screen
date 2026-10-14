@@ -65,7 +65,7 @@ export function HowItWorks() {
                 )}
               </div>
               <div className="pt-1.5 pb-2">
-                <span className="text-xs font-mono text-primary/40 tracking-wider">0{index + 1}</span>
+                <span className="text-xs font-mono text-primary tracking-wider">0{index + 1}</span>
                 <h3 className="font-semibold text-foreground mb-1">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
